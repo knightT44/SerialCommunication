@@ -1,33 +1,34 @@
 ﻿namespace SerialCommunication
 {
-    partial class Form1
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class Form1
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.components = new System.ComponentModel.Container();
 			this.radioButtonVerbonden = new System.Windows.Forms.RadioButton();
 			this.buttonConnect = new System.Windows.Forms.Button();
 			this.labelPoort = new System.Windows.Forms.Label();
@@ -88,6 +89,8 @@
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+			this.serialPortArduino = new System.IO.Ports.SerialPort(this.components);
+			this.timerOefening5 = new System.Windows.Forms.Timer(this.components);
 			this.tabControl.SuspendLayout();
 			this.tabPageInstellingen.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -787,6 +790,7 @@
 			this.tabPageOefening5.TabIndex = 5;
 			this.tabPageOefening5.Text = "Oefening 5";
 			this.tabPageOefening5.UseVisualStyleBackColor = true;
+			this.tabPageOefening5.Click += new System.EventHandler(this.tabControl_SelectedIndexChanged);
 			// 
 			// labelHuidigeTemp
 			// 
@@ -860,6 +864,16 @@
 			this.labelStatus.Name = "labelStatus";
 			this.labelStatus.Size = new System.Drawing.Size(0, 15);
 			// 
+			// serialPortArduino
+			// 
+			this.serialPortArduino.ReadTimeout = 1000;
+			this.serialPortArduino.WriteTimeout = 1000;
+			// 
+			// timerOefening5
+			// 
+			this.timerOefening5.Interval = 1000;
+			this.timerOefening5.Tick += new System.EventHandler(this.timerOefening5_Tick);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -907,70 +921,72 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        internal System.Windows.Forms.RadioButton radioButtonVerbonden;
-        internal System.Windows.Forms.Button buttonConnect;
-        internal System.Windows.Forms.Label labelPoort;
-        internal System.Windows.Forms.ComboBox comboBoxPoort;
-        internal System.Windows.Forms.TabControl tabControl;
-        internal System.Windows.Forms.TabPage tabPageInstellingen;
-        internal System.Windows.Forms.CheckBox checkBoxDtrEnable;
-        internal System.Windows.Forms.CheckBox checkBoxRtsEnable;
-        internal System.Windows.Forms.Label label8;
-        internal System.Windows.Forms.GroupBox groupBox3;
-        internal System.Windows.Forms.RadioButton radioButtonHandshakeXonXoff;
-        internal System.Windows.Forms.RadioButton radioButtonHandshakeRTSXonXoff;
-        internal System.Windows.Forms.RadioButton radioButtonHandshakeRTS;
-        internal System.Windows.Forms.RadioButton radioButtonHandshakeNone;
-        internal System.Windows.Forms.Label label7;
-        internal System.Windows.Forms.GroupBox groupBox2;
-        internal System.Windows.Forms.RadioButton radioButtonStopbitsTwo;
-        internal System.Windows.Forms.RadioButton radioButtonStopbitsOnePointFive;
-        internal System.Windows.Forms.RadioButton radioButtonStopbitsOne;
-        internal System.Windows.Forms.RadioButton radioButtonStopbitsNone;
-        internal System.Windows.Forms.Label label6;
-        internal System.Windows.Forms.GroupBox groupBox1;
-        internal System.Windows.Forms.RadioButton radioButtonParitySpace;
-        internal System.Windows.Forms.RadioButton radioButtonParityMark;
-        internal System.Windows.Forms.RadioButton radioButtonParityNone;
-        internal System.Windows.Forms.RadioButton radioButtonParityOdd;
-        internal System.Windows.Forms.RadioButton radioButtonParityEven;
-        internal System.Windows.Forms.Label label5;
-        internal System.Windows.Forms.NumericUpDown numericUpDownDatabits;
-        internal System.Windows.Forms.ComboBox comboBoxBaudrate;
-        internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.TabPage tabPageOefening1;
-        internal System.Windows.Forms.PictureBox pictureBox1;
-        internal System.Windows.Forms.CheckBox checkBoxDigital4;
-        internal System.Windows.Forms.CheckBox checkBoxDigital3;
-        internal System.Windows.Forms.CheckBox checkBoxDigital2;
-        internal System.Windows.Forms.TabPage tabPageOefening2;
-        internal System.Windows.Forms.Label label3;
-        internal System.Windows.Forms.TrackBar trackBarPWM11;
-        internal System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TrackBar trackBarPWM10;
-        internal System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.TrackBar trackBarPWM9;
-        internal System.Windows.Forms.PictureBox pictureBox2;
-        internal System.Windows.Forms.TabPage tabPageOefening3;
-        internal System.Windows.Forms.RadioButton radioButtonDigital7;
-        internal System.Windows.Forms.RadioButton radioButtonDigital6;
-        internal System.Windows.Forms.RadioButton radioButtonDigital5;
-        internal System.Windows.Forms.PictureBox pictureBox3;
-        internal System.Windows.Forms.TabPage tabPageOefening4;
-        internal System.Windows.Forms.Label labelAnalog0;
-        internal System.Windows.Forms.PictureBox pictureBox4;
-        internal System.Windows.Forms.TabPage tabPageOefening5;
-        internal System.Windows.Forms.Label labelHuidigeTemp;
-        internal System.Windows.Forms.Label label11;
-        internal System.Windows.Forms.Label labelGewensteTemp;
-        internal System.Windows.Forms.Label label9;
-        internal System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel labelStatus;
-    }
+		internal System.Windows.Forms.RadioButton radioButtonVerbonden;
+		internal System.Windows.Forms.Button buttonConnect;
+		internal System.Windows.Forms.Label labelPoort;
+		internal System.Windows.Forms.ComboBox comboBoxPoort;
+		internal System.Windows.Forms.TabControl tabControl;
+		internal System.Windows.Forms.TabPage tabPageInstellingen;
+		internal System.Windows.Forms.CheckBox checkBoxDtrEnable;
+		internal System.Windows.Forms.CheckBox checkBoxRtsEnable;
+		internal System.Windows.Forms.Label label8;
+		internal System.Windows.Forms.GroupBox groupBox3;
+		internal System.Windows.Forms.RadioButton radioButtonHandshakeXonXoff;
+		internal System.Windows.Forms.RadioButton radioButtonHandshakeRTSXonXoff;
+		internal System.Windows.Forms.RadioButton radioButtonHandshakeRTS;
+		internal System.Windows.Forms.RadioButton radioButtonHandshakeNone;
+		internal System.Windows.Forms.Label label7;
+		internal System.Windows.Forms.GroupBox groupBox2;
+		internal System.Windows.Forms.RadioButton radioButtonStopbitsTwo;
+		internal System.Windows.Forms.RadioButton radioButtonStopbitsOnePointFive;
+		internal System.Windows.Forms.RadioButton radioButtonStopbitsOne;
+		internal System.Windows.Forms.RadioButton radioButtonStopbitsNone;
+		internal System.Windows.Forms.Label label6;
+		internal System.Windows.Forms.GroupBox groupBox1;
+		internal System.Windows.Forms.RadioButton radioButtonParitySpace;
+		internal System.Windows.Forms.RadioButton radioButtonParityMark;
+		internal System.Windows.Forms.RadioButton radioButtonParityNone;
+		internal System.Windows.Forms.RadioButton radioButtonParityOdd;
+		internal System.Windows.Forms.RadioButton radioButtonParityEven;
+		internal System.Windows.Forms.Label label5;
+		internal System.Windows.Forms.NumericUpDown numericUpDownDatabits;
+		internal System.Windows.Forms.ComboBox comboBoxBaudrate;
+		internal System.Windows.Forms.Label label4;
+		internal System.Windows.Forms.TabPage tabPageOefening1;
+		internal System.Windows.Forms.PictureBox pictureBox1;
+		internal System.Windows.Forms.CheckBox checkBoxDigital4;
+		internal System.Windows.Forms.CheckBox checkBoxDigital3;
+		internal System.Windows.Forms.CheckBox checkBoxDigital2;
+		internal System.Windows.Forms.TabPage tabPageOefening2;
+		internal System.Windows.Forms.Label label3;
+		internal System.Windows.Forms.TrackBar trackBarPWM11;
+		internal System.Windows.Forms.Label label2;
+		internal System.Windows.Forms.TrackBar trackBarPWM10;
+		internal System.Windows.Forms.Label label1;
+		internal System.Windows.Forms.TrackBar trackBarPWM9;
+		internal System.Windows.Forms.PictureBox pictureBox2;
+		internal System.Windows.Forms.TabPage tabPageOefening3;
+		internal System.Windows.Forms.RadioButton radioButtonDigital7;
+		internal System.Windows.Forms.RadioButton radioButtonDigital6;
+		internal System.Windows.Forms.RadioButton radioButtonDigital5;
+		internal System.Windows.Forms.PictureBox pictureBox3;
+		internal System.Windows.Forms.TabPage tabPageOefening4;
+		internal System.Windows.Forms.Label labelAnalog0;
+		internal System.Windows.Forms.PictureBox pictureBox4;
+		internal System.Windows.Forms.TabPage tabPageOefening5;
+		internal System.Windows.Forms.Label labelHuidigeTemp;
+		internal System.Windows.Forms.Label label11;
+		internal System.Windows.Forms.Label labelGewensteTemp;
+		internal System.Windows.Forms.Label label9;
+		internal System.Windows.Forms.PictureBox pictureBox5;
+		private System.Windows.Forms.StatusStrip statusStrip;
+		private System.Windows.Forms.ToolStripStatusLabel labelStatus;
+		private System.IO.Ports.SerialPort serialPortArduino;
+		private System.Windows.Forms.Timer timerOefening5;
+	}
 }
 
